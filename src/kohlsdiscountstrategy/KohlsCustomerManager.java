@@ -33,7 +33,7 @@ public class KohlsCustomerManager {
         kohlsCustomers[kohlsCustomers.length-1] = kohlsCustomer;
     }
     
-    public KohlsCustomer findCustomerbyCustomerNumber(String customerNumber){
+    public KohlsCustomer findCustomerByCustomerNumber(String customerNumber){
         if(customerNumber == null || customerNumber.length() == 0) {
             throw new IllegalArgumentException(requiredFieldsErrorMessage);
         }
