@@ -14,6 +14,7 @@ public class Product {
     private double productUnitPrice;
     private final String nullErrorMessage = "This field may not be blank";
     private final String priceOutOfRangeMessage = "Check that price again";
+   
 
     public Product(int productNumber, String productDescription, double productUnitPrice) {
         this.productNumber = productNumber;
@@ -56,8 +57,7 @@ public class Product {
     public double getProductUnitPrice() {
         return productUnitPrice;
     }
-    
-    
+  
     
     
   
