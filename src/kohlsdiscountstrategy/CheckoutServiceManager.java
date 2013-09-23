@@ -9,7 +9,8 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class CheckoutServiceManager {
-    private KohlsCustomer kohlsCustomer;
-    private TransactionReceipt receipt;
+    
+    private Transaction salesTransaction;
+    
     
 }
