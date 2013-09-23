@@ -12,10 +12,16 @@ public class NoDiscount implements ProductDiscountStrategy {
 
     private Product product;
     private double discountPrice;
+    private int quantityPurchased;
+
+    public NoDiscount(Product product, int quantityPurchased) {
+        this.product = product;
+        this.quantityPurchased = quantityPurchased;
+    }
     
     @Override
-    public void calculateDiscount(String productNumber, int quantityPurchased) {
-        discountPrice = (product.getProductUnitPrice()) * quantityPurchased;
+    public double calculateDiscount() {
+        return discountPrice = (product.getProductUnitPrice()) * quantityPurchased;
         
     }
  

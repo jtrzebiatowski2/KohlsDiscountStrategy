@@ -15,13 +15,16 @@ public class LineItem {
     private final String productQuantityRequiredMessage = "Enter a valid quantity";
     private ProductDiscountStrategy discountstrategyType;
 
-    public LineItem(Product product, int itemQuantity, double linePriceTotal, ProductDiscountStrategy discountStrategyType) {
+    public LineItem(Product product, int itemQuantity, ProductDiscountStrategy discountStrategyType) {
         this.product = product;
         this.itemQuantity = itemQuantity;
-        this.linePriceTotal = linePriceTotal;
         this.discountstrategyType = discountStrategyType;
     }
 
+    public double getLinePriceTotal(LineItem item, ProductDiscountStrategy discountStrategyType){
+        return discountStrategyType.calculateDiscount();
+    }
+    
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
         if(itemQuantity < 1 || itemQuantity > 500){

@@ -11,9 +11,16 @@ package kohlsdiscountstrategy;
 public class HalfOffDiscount implements ProductDiscountStrategy{
     private Product product;
     private double discountPrice;
+    private double quantityPurchased;
+
+    public HalfOffDiscount(Product product, double quantityPurchased) {
+        this.product = product;
+        this.quantityPurchased = quantityPurchased;
+    }
+    
     @Override
-    public void calculateDiscount(String productNumber, int quantityPurchased) {
-        discountPrice = (product.getProductUnitPrice() * quantityPurchased)/2;
+    public double calculateDiscount() {
+        return discountPrice = (product.getProductUnitPrice() * quantityPurchased)/2;
     }
     
     public double getDiscount(){

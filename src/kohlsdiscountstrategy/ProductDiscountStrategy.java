@@ -9,5 +9,5 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public interface ProductDiscountStrategy {
-    public abstract void calculateDiscount(String productNumber, int quantityPurchased);
+    public abstract double calculateDiscount();
 }
