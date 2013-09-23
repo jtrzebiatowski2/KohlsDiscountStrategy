@@ -12,8 +12,8 @@ public class ConsoleReceiptOutput implements ReceiptOutputStrategy {
     private TransactionReceipt transactionReceipt;
     
     @Override
-    public void printReceipt() {
-        
+    public void printReceipt(TransactionReceipt transactionReceipt) {
+        System.out.print(transactionReceipt);
     }
     
 }

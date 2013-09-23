@@ -8,9 +8,8 @@ package kohlsdiscountstrategy;
  *
  * @author J-Tron
  */
-public class CashRegister {
+public interface Transaction {
+    public abstract void findCustomer(String customerNumber);
+    public abstract void addItem(int itemNumber, int itemQuantity);
     
-    public void startNewSale(String customerNumber){
-        
-    }
 }
