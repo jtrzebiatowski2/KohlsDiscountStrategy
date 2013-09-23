@@ -15,14 +15,10 @@ private KohlsCustomer kohlsCustomer;
 private Product product;
 private ProductManager productManger;
 
-    public SalesTransaction(KohlsCustomerManager kohlsCustomerManager, KohlsCustomer kohlsCustomer, Product product, ProductManager productManger) {
-        this.kohlsCustomerManager = kohlsCustomerManager;
-        this.kohlsCustomer = kohlsCustomer;
-        this.product = product;
-        this.productManger = productManger;
+    public SalesTransaction(KohlsCustomer kohlsCustomer) {
+        this.kohlsCustomer = kohlsCustomer;  
     }
-
-
+    
     @Override
     public void findCustomer(String customerNumber) {
         kohlsCustomerManager = new KohlsCustomerManager();

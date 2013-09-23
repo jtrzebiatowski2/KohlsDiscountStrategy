@@ -22,16 +22,4 @@ public class TransactionReceipt {
         
     }
     
-    public void addItem(int productNumber,int quantity){
-      LineItem item = null;
-      productManager.findProduct(productNumber);
-      item.setItemQuantity(quantity);
-      
-      
-      
-      
-    }
-    
-    
-    
 }
