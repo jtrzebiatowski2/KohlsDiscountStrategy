@@ -8,9 +8,6 @@ package kohlsdiscountstrategy;
  *
  * @author J-Tron
  */
-public class CashRegister {
-    
-    public void startNewSale(String customerNumber){
-        transactionReceipt = new TransactionReceipt()
-    }
+public interface ReceiptOutputStrategy {
+    public abstract void printReceipt(TransactionReceipt receipt);
 }
