@@ -13,11 +13,13 @@ public class LineItem {
     private int itemQuantity;
     private double linePriceTotal;
     private final String productQuantityRequiredMessage = "Enter a valid quantity";
+    private ProductDiscountStrategy discountstrategyType;
 
-    public LineItem(Product product, int itemQuantity, double linePriceTotal) {
+    public LineItem(Product product, int itemQuantity, double linePriceTotal, ProductDiscountStrategy discountStrategyType) {
         this.product = product;
         this.itemQuantity = itemQuantity;
         this.linePriceTotal = linePriceTotal;
+        this.discountstrategyType = discountStrategyType;
     }
 
     public void setItemQuantity(int itemQuantity) {
