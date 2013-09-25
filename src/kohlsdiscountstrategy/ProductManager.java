@@ -9,6 +9,7 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class ProductManager {
+    private ProductDiscountStrategy discount;
     private Product [] products;
     private final String requiredFieldsErrorMessage = "The fields may not be blank";
     private final String priceOutOfRangeMessage = "Check that price again";
@@ -21,9 +22,9 @@ public class ProductManager {
         return products;
     }
     
-    public void addNewProduct(int productNumber, String productDescription, double productUnitPrice){
+    public void addNewProduct(String productNumber, String productDescription, double productUnitPrice){
         
-    if(productNumber < 1) {
+    if(productNumber == null) {
         throw new IllegalArgumentException(requiredFieldsErrorMessage);
         }
     if(productDescription == null){
@@ -33,7 +34,7 @@ public class ProductManager {
         throw new IllegalArgumentException(priceOutOfRangeMessage);
     }
     
-        Product product = new Product(productNumber, productDescription, productUnitPrice);
+        Product product = new Product(productNumber, productDescription, productUnitPrice, discount);
         Product[] temp = new Product[products.length + 1];
         System.arraycopy(products, 0, temp, 0, products.length);
         products = temp;
@@ -47,10 +48,11 @@ public class ProductManager {
             Product product = null;
             
               for(Product p : products) {
-                if((p.getProductNumber()) == productNumber) {
+                if((p.getProductNumber()).equals(productNumber));
+                {
                 product = p;
                 break;
-            }
+                }
     } 
         return product; 
     }

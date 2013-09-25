@@ -9,5 +9,5 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public interface ProductDiscountStrategy {
-    public abstract double calculateDiscount();
+    public abstract double calculateDiscount(double unitCost, double quantityPurchased);
 }

@@ -9,17 +9,72 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class TransactionReceipt {
-    private LineItem[] lineItems;
-    private KohlsCustomerManager kohlsCustomerManager;
+    private LineItem[] purchasedItems;
     private KohlsCustomer kohlsCustomer;
-    private Product product;
-    private ProductManager productManager;
-    private double lineItemPrice;
+    private double transactionTotal;
+    private final double zeroPrice = 0.0;
 
-    public TransactionReceipt(String customerNumber, LineItem[] lineItems) {
-        kohlsCustomerManager = new KohlsCustomerManager();
-        kohlsCustomer = kohlsCustomerManager.findCustomerByCustomerNumber(customerNumber);
+    public TransactionReceipt(String customerNumber) {
         
+        KohlsCustomer customer = ProductAndCustomerDatabase.findCustomer(customerNumber);
+        setKohlsCustomer(customer);
+        purchasedItems = new LineItem[0];
+           }
+    
+    public final LineItem[] getLineItems(){
+        return purchasedItems;
+    }
+
+    public KohlsCustomer getKohlsCustomer() {
+        return kohlsCustomer;
     }
     
+    
+    public final void setKohlsCustomer(KohlsCustomer kohlscustomer){
+    
+        this.kohlsCustomer = kohlsCustomer;
 }
+    
+    public void setLineItems(LineItem[] purchasedItems){
+        this.purchasedItems = purchasedItems;
+    }
+    
+    public final void setTransactionTotal(double transactionTotal){
+        this.transactionTotal = transactionTotal;
+    }
+    
+    public final double getTransactionTotal(){
+        return transactionTotal;
+    }
+    
+    public final void zeroTransactionTotal(){
+        double transactionTotal = zeroPrice;
+        
+        for (LineItem lineItem : purchasedItems) {
+			transactionTotal += lineItem.getSubTotal();
+		}
+
+		setTransactionTotal(transactionTotal);
+
+	}
+    public static LineItem[] addItem(LineItem[] array, LineItem item) {
+		LineItem[] temp = new LineItem[array.length + 1];
+		System.arraycopy(array, 0, temp, 0, array.length);
+		temp[temp.length - 1] = item;
+		return temp;
+	}
+           
+    public void addLineItem(String productNumber, double quantityPurchased) {
+        LineItem purchasedItem = new LineItem(productNumber, quantityPurchased);
+        setLineItems(addItem(purchasedItems, purchasedItem));
+        setTransactionTotal(getTransactionTotal() + purchasedItem.getSubTotal()); 
+    }
+
+    public LineItem[] getPurchasedItems() {
+        return purchasedItems;
+    }
+    
+    
+ }
+    
+
