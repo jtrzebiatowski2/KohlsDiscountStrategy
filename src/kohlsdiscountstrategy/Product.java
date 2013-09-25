@@ -9,19 +9,17 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class Product {
-    private ProductDiscountStrategy discount;
-    private String productNumber;
+    private int productNumber;
     private String productDescription;
     private double productUnitPrice;
     private final String nullErrorMessage = "This field may not be blank";
     private final String priceOutOfRangeMessage = "Check that price again";
    
 
-    public Product(String productNumber, String productDescription, double productUnitPrice, ProductDiscountStrategy discount) {
+    public Product(int productNumber, String productDescription, double productUnitPrice) {
         this.productNumber = productNumber;
         this.productDescription = productDescription;
         this.productUnitPrice = productUnitPrice;
-        this.discount = discount;
     }
 
     public void setProductDescription(String productDescription) {
@@ -32,9 +30,9 @@ public class Product {
         }
     }
 
-    public void setProductNumber(String productNumber) {
+    public void setProductNumber(int productNumber) {
         this.productNumber = productNumber;
-        if(productNumber == null)
+        if(productNumber < 1)
         {
             System.out.println(nullErrorMessage);
         }
@@ -48,21 +46,11 @@ public class Product {
         }
     }
 
-    public ProductDiscountStrategy getDiscount() {
-        return discount;
-    }
-    
-    
-    public void setDiscount(ProductDiscountStrategy discount){
-        this.discount = discount;
-    }
-    
-
     public String getProductDescription() {
         return productDescription;
     }
 
-    public String getProductNumber() {
+    public int getProductNumber() {
         return productNumber;
     }
 
@@ -72,5 +60,5 @@ public class Product {
   
     
     
+  
 }
-

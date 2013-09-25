@@ -8,6 +8,9 @@ package kohlsdiscountstrategy;
  *
  * @author J-Tron
  */
-public interface ReceiptOutputStrategy {
-    public abstract void printReceipt(TransactionReceipt receipt);
+public class CheckoutServiceManager {
+    
+    private Transaction salesTransaction;
+    
+    
 }

@@ -8,6 +8,8 @@ package kohlsdiscountstrategy;
  *
  * @author J-Tron
  */
-public interface ReceiptOutputStrategy {
-    public abstract void printReceipt(TransactionReceipt receipt);
+public interface Transaction {
+    public abstract void findCustomer(String customerNumber);
+    public abstract void addItem(int itemNumber, int itemQuantity);
+    
 }

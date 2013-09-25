@@ -9,13 +9,24 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class NoDiscount implements ProductDiscountStrategy {
-    private final double discountValueInitializer = 0.0;
+
+    private Product product;
+    private double discountPrice;
+    private int quantityPurchased;
+
+    public NoDiscount(Product product, int quantityPurchased) {
+        this.product = product;
+        this.quantityPurchased = quantityPurchased;
+    }
     
     @Override
-    public double calculateDiscount(double unitCost, double quantityPurchased) {
-       double discount = discountValueInitializer;
-       
-       return discount;
+    public double calculateDiscount() {
+        return discountPrice = (product.getProductUnitPrice()) * quantityPurchased;
+        
     }
  
+    public double getDiscount(){
+        return discountPrice;
+    }
+    
 }
