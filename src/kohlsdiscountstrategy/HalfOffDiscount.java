@@ -9,22 +9,16 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class HalfOffDiscount implements ProductDiscountStrategy{
-    private Product product;
-    private double discountPrice;
-    private double quantityPurchased;
-
-    public HalfOffDiscount(Product product, double quantityPurchased) {
-        this.product = product;
-        this.quantityPurchased = quantityPurchased;
-    }
+    private final double discountValueInitializer = 0.0;
+    private final double halfOffValue = .50;
     
     @Override
-    public double calculateDiscount() {
-        return discountPrice = (product.getProductUnitPrice() * quantityPurchased)/2;
-    }
-    
-    public double getDiscount(){
-        return discountPrice;
+    public double calculateDiscount(double unitCost, double quantityPurchased) {
+         double discount = discountValueInitializer;
+         
+         discount = (unitCost * quantityPurchased) * halfOffValue;
+        
+        return discount;
     }
     
 }
