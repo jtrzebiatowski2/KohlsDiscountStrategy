@@ -8,7 +8,7 @@ package kohlsdiscountstrategy;
  *
  * @author J-Tron
  */
-public class ProductsAndCustomersDatabase {
+public class ProductAndCustomerDatabase {
     public static final Product[] products = new Product[9];
     public static final KohlsCustomer[] customers = new KohlsCustomer[9];
     
@@ -35,5 +35,35 @@ public class ProductsAndCustomersDatabase {
         customers[8] = new KohlsCustomer("Manny", "Little", "A9");
         customers[9] = new KohlsCustomer("Victoria", "Sartino", "A10");
     }
+    
+    public static KohlsCustomer findCustomer(String customerId) {
+
+		KohlsCustomer searchedCustomer = null;
+
+		for (KohlsCustomer customer : customers) {
+			if ((customerId).equals(customer.getCustomerNumber())) {
+				searchedCustomer = customer;
+				break;
+			}
+		}
+
+		return searchedCustomer;
+
+	}
+    
+     public static Product findProduct(String productNumber) {
+
+		Product searchedProduct = null;
+
+		for (Product product : products) {
+			if ((productNumber).equals(product.getProductNumber())) {
+				searchedProduct = product;
+				break;
+			}
+		}
+
+		return searchedProduct;
+
+	}
 }
 
