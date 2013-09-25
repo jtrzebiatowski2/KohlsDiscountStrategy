@@ -9,8 +9,8 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class ProductAndCustomerDatabase {
-    public static final Product[] products = new Product[9];
-    public static final KohlsCustomer[] customers = new KohlsCustomer[9];
+    public static final Product[] products = new Product[10];
+    public static final KohlsCustomer[] customers = new KohlsCustomer[10];
     
     static{
         products[0] = new Product("1", "400 Thread Count Queen Sheets", 49.99, new NoDiscount());

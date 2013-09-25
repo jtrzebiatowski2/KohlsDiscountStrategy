@@ -22,6 +22,8 @@ public class Driver {
        register1.addItemToPurchase("7", 2);
        register1.addItemToPurchase("10", 2); 
        
+       register1.printReceipt();
+       
        
         
         
