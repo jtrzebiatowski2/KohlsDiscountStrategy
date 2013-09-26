@@ -9,10 +9,11 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class CashRegister {
-    ConsoleReceiptOutput consoleOutput = new ConsoleReceiptOutput();
+    private ReceiptOutputStrategy consoleOutput;
     private TransactionReceipt transactionReceipt;
     
     public CashRegister(){ 
+        consoleOutput = new ConsoleReceiptOutput();
     }
     
     public void startNewSale(String customerNumber){
@@ -26,7 +27,7 @@ public class CashRegister {
     }
     
     public void printReceipt(){
-        consoleOutput.buildReceipt(transactionReceipt);
+        consoleOutput.outputReceipt(transactionReceipt);
     }
     
 }

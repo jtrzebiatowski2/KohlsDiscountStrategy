@@ -10,29 +10,30 @@ package kohlsdiscountstrategy;
  */
 public class TransactionReceipt {
     private LineItem[] purchasedItems;
-    private KohlsCustomer kohlsCustomer;
+    private Customer cutomer;
     private double transactionTotal;
     private final double zeroPrice = 0.0;
+    private String vendor; // consider using this
 
     public TransactionReceipt(String customerNumber) {
         
-        KohlsCustomer customer = ProductAndCustomerDatabase.findCustomer(customerNumber);
-        setKohlsCustomer(customer);
+        Customer customer = ProductAndCustomerDatabase.findCustomer(customerNumber);
+        setCustomer(customer);
         purchasedItems = new LineItem[0];
-           }
+    }
     
     public final LineItem[] getLineItems(){
         return purchasedItems;
     }
 
-    public KohlsCustomer getKohlsCustomer() {
-        return kohlsCustomer;
+    public Customer getCustomer() {
+        return cutomer;
     }
     
     
-    public final void setKohlsCustomer(KohlsCustomer kohlscustomer){
+    public final void setCustomer(Customer kohlscustomer){
     
-        this.kohlsCustomer = kohlsCustomer;
+        this.cutomer = kohlscustomer;
 }
     
     public void setLineItems(LineItem[] purchasedItems){

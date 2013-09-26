@@ -10,14 +10,14 @@ package kohlsdiscountstrategy;
  */
 public class KohlsCustomerManager {
     
-    private KohlsCustomer [] kohlsCustomers;
+    private Customer [] kohlsCustomers;
     private final String requiredFieldsErrorMessage = "The fields may not be blank";
     
     public KohlsCustomerManager(){
-        kohlsCustomers = new KohlsCustomer[0];
+        kohlsCustomers = new Customer[0];
     }
     
-    public KohlsCustomer[] getCustomer(){
+    public Customer[] getCustomer(){
         return kohlsCustomers;
     }
     
@@ -26,20 +26,20 @@ public class KohlsCustomerManager {
     if(firstName == null || lastName == null || customerNumber == null) {
             throw new IllegalArgumentException(requiredFieldsErrorMessage);
         }
-        KohlsCustomer kohlsCustomer = new KohlsCustomer(firstName, lastName, customerNumber);
-        KohlsCustomer[] temp = new KohlsCustomer[kohlsCustomers.length + 1];
+        Customer kohlsCustomer = new Customer(firstName, lastName, customerNumber);
+        Customer[] temp = new Customer[kohlsCustomers.length + 1];
         System.arraycopy(kohlsCustomers, 0, temp, 0, kohlsCustomers.length);
         kohlsCustomers = temp;
         kohlsCustomers[kohlsCustomers.length-1] = kohlsCustomer;
     }
     
-    public KohlsCustomer findCustomerByCustomerNumber(String customerNumber){
+    public Customer findCustomerByCustomerNumber(String customerNumber){
         if(customerNumber == null || customerNumber.length() == 0) {
             throw new IllegalArgumentException(requiredFieldsErrorMessage);
         }
-            KohlsCustomer kohlsCustomer = null;
+            Customer kohlsCustomer = null;
             
-              for(KohlsCustomer kc : kohlsCustomers) {
+              for(Customer kc : kohlsCustomers) {
                 if(kc.getCustomerNumber().equalsIgnoreCase(customerNumber)) {
                 kohlsCustomer = kc;
                 break;

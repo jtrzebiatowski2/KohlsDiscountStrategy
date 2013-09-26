@@ -9,7 +9,7 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class ThirtyPercentOffDiscount implements ProductDiscountStrategy{
-    private final double thirtyPercentOffRate = .70;
+    private final double thirtyPercentOffRate = .30;
     private final double discountValueInitializer = 0.0;
     
     @Override

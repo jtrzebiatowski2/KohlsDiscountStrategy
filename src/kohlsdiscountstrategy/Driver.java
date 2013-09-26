@@ -24,6 +24,14 @@ public class Driver {
        
        register1.printReceipt();
        
+       CashRegister register2 = new CashRegister();
+       
+       register2.startNewSale("A6");
+       register2.addItemToPurchase("4", 3);
+       register2.addItemToPurchase("8", 2);
+       register2.addItemToPurchase("10", 8);
+       
+       register2.printReceipt();
        
         
         

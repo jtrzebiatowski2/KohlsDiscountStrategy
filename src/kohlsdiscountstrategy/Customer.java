@@ -1,26 +1,22 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package kohlsdiscountstrategy;
 
 /**
  *
  * @author J-Tron
  */
-public class KohlsCustomer {
+public class Customer {
     private String firstName;
     private String lastName;
     private String customerNumber;
     private final String nullErrorMessage = "This field may not be blank";
 
-    public KohlsCustomer(String firstName, String lastName, String customerNumber) {
+    public Customer(String firstName, String lastName, String customerNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.customerNumber = customerNumber;
     }
 
-    public KohlsCustomer() {
+    public Customer() {
     }
 
     public void setCustomerNumer(String customerNumber) {
@@ -59,8 +55,12 @@ public class KohlsCustomer {
         return lastName;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getFullName(){
-        return firstName + ", " + lastName;
+        return firstName + " " + lastName;
     }
     
     

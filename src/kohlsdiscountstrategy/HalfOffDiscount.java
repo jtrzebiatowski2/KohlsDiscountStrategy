@@ -9,7 +9,7 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class HalfOffDiscount implements ProductDiscountStrategy{
-    private final double discountValueInitializer = 0.0;
+    private double discountValueInitializer = 0.0;
     private final double halfOffValue = .50;
     
     @Override

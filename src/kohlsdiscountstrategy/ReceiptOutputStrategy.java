@@ -9,5 +9,5 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public interface ReceiptOutputStrategy {
-    public abstract String buildReceipt(TransactionReceipt receipt);
+    public abstract void outputReceipt(TransactionReceipt transactionReceipt);
 }
