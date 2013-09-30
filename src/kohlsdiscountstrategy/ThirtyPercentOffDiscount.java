@@ -9,14 +9,14 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class ThirtyPercentOffDiscount implements ProductDiscountStrategy{
-    private final double thirtyPercentOffRate = .30;
-    private final double discountValueInitializer = 0.0;
+    private final double THIRTY_PERCENT_OFF_RATE = .30;
+    private final double DISCOUNT_VALUE_INITIAIZER = 0.0;
     
     @Override
     public double calculateDiscount(double unitCost, double quantityPurchased) {
-       double discount = discountValueInitializer;
+       double discount = DISCOUNT_VALUE_INITIAIZER;
        
-       discount = (unitCost * quantityPurchased) * thirtyPercentOffRate;
+       discount = (unitCost * quantityPurchased) * THIRTY_PERCENT_OFF_RATE;
        
        return discount;
     }

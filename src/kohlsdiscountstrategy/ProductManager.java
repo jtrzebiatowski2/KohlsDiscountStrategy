@@ -11,8 +11,8 @@ package kohlsdiscountstrategy;
 public class ProductManager {
     private ProductDiscountStrategy discount;
     private Product [] products;
-    private final String requiredFieldsErrorMessage = "The fields may not be blank";
-    private final String priceOutOfRangeMessage = "Check that price again";
+    private final String REQUIRED_FIELDS_ERROR_MESSAGE = "The fields may not be blank";
+    private final String PRICE_OUT_OF_RANGE_MESSAGE = "Check that price again";
     
     public ProductManager(){
         products = new Product[0];
@@ -25,13 +25,13 @@ public class ProductManager {
     public void addNewProduct(String productNumber, String productDescription, double productUnitPrice){
         
     if(productNumber == null) {
-        throw new IllegalArgumentException(requiredFieldsErrorMessage);
+        throw new IllegalArgumentException(REQUIRED_FIELDS_ERROR_MESSAGE);
         }
     if(productDescription == null){
-        throw new IllegalArgumentException(requiredFieldsErrorMessage);
+        throw new IllegalArgumentException(REQUIRED_FIELDS_ERROR_MESSAGE);
     }
     if(productUnitPrice < .01 || productUnitPrice > 10000.00){
-        throw new IllegalArgumentException(priceOutOfRangeMessage);
+        throw new IllegalArgumentException(PRICE_OUT_OF_RANGE_MESSAGE);
     }
     
         Product product = new Product(productNumber, productDescription, productUnitPrice, discount);
@@ -43,7 +43,7 @@ public class ProductManager {
     
     public Product findProduct(int productNumber){
         if(productNumber < 1) {
-            throw new IllegalArgumentException(requiredFieldsErrorMessage);
+            throw new IllegalArgumentException(REQUIRED_FIELDS_ERROR_MESSAGE);
         }
             Product product = null;
             

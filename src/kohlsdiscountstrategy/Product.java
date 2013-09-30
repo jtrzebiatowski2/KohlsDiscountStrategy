@@ -13,8 +13,8 @@ public class Product {
     private String productNumber;
     private String productDescription;
     private double productUnitPrice;
-    private final String nullErrorMessage = "This field may not be blank";
-    private final String priceOutOfRangeMessage = "Check that price again";
+    private final String NULL_ERROR_MESSAGE = "This field may not be blank";
+    private final String PRICE_OUT_OF_RANGE_MESSAGE = "Check that price again";
    
 
     public Product(String productNumber, String productDescription, double productUnitPrice, ProductDiscountStrategy discount) {
@@ -28,7 +28,7 @@ public class Product {
         this.productDescription = productDescription;
         if(productDescription.length() < 1 || productDescription == null)
         {
-            System.out.println(nullErrorMessage);
+            System.out.println(NULL_ERROR_MESSAGE);
         }
     }
 
@@ -36,7 +36,7 @@ public class Product {
         this.productNumber = productNumber;
         if(productNumber == null)
         {
-            System.out.println(nullErrorMessage);
+            System.out.println(NULL_ERROR_MESSAGE);
         }
     }
 
@@ -44,7 +44,7 @@ public class Product {
         this.productUnitPrice = productUnitPrice;
         if(productUnitPrice < .01 || productUnitPrice > 10000.00)
         {
-            System.out.println(priceOutOfRangeMessage);
+            System.out.println(PRICE_OUT_OF_RANGE_MESSAGE);
         }
     }
 

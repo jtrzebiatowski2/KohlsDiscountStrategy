@@ -13,7 +13,7 @@ public class LineItem {
     private double itemQuantity;
     private double subTotal;
     private double discountAmount;
-    private final String productQuantityRequiredMessage = "Enter a valid quantity";
+    private final String PRODUCT_QUANTITY_REQUIRED_MESSAGE = "Enter a valid quantity";
 
     public LineItem(String productNumber, double quantityPurchased) {
         product = ProductAndCustomerDatabase.findProduct(productNumber);
@@ -30,7 +30,7 @@ public class LineItem {
     public void setItemQuantity(double itemQuantity) {
         this.itemQuantity = itemQuantity;
         if(itemQuantity < 1 || itemQuantity > 500){
-            throw new IllegalArgumentException(productQuantityRequiredMessage);
+            throw new IllegalArgumentException(PRODUCT_QUANTITY_REQUIRED_MESSAGE);
         }
     }
 

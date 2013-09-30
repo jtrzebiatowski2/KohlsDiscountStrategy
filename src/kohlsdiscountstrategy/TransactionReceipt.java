@@ -12,7 +12,7 @@ public class TransactionReceipt {
     private LineItem[] purchasedItems;
     private Customer cutomer;
     private double transactionTotal;
-    private final double zeroPrice = 0.0;
+    private final double ZERO_PRICE = 0.0;
     private String vendor; // consider using this
 
     public TransactionReceipt(String customerNumber) {
@@ -49,7 +49,7 @@ public class TransactionReceipt {
     }
     
     public final void zeroTransactionTotal(){
-        double transactionTotal = zeroPrice;
+        double transactionTotal = ZERO_PRICE;
         
         for (LineItem lineItem : purchasedItems) {
 			transactionTotal += lineItem.getSubTotal();
