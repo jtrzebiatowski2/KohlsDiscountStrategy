@@ -4,6 +4,10 @@
  */
 package kohlsdiscountstrategy;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author J-Tron
@@ -13,10 +17,12 @@ public class TransactionReceipt {
     private Customer cutomer;
     private double transactionTotal;
     private final double ZERO_PRICE = 0.0;
-    private String vendor; // consider using this
+    private String vendor; 
+    
+    
 
     public TransactionReceipt(String customerNumber) {
-        
+        vendor= "Kohls";
         Customer customer = ProductAndCustomerDatabase.findCustomer(customerNumber);
         setCustomer(customer);
         purchasedItems = new LineItem[0];
@@ -74,6 +80,16 @@ public class TransactionReceipt {
     public LineItem[] getPurchasedItems() {
         return purchasedItems;
     }
+    public String getDateTime(){
+    Calendar c = Calendar.getInstance();
+    Date date = c.getTime();
+    String format = "MM/dd/yyyy hh:mm a";
+    SimpleDateFormat sdf = new SimpleDateFormat(format);
+    String formattedDate = sdf.format(date);
+    
+    return formattedDate;
+    }
+    
     
     
  }

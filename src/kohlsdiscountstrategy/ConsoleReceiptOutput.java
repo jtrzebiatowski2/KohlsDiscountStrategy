@@ -26,8 +26,9 @@ public class ConsoleReceiptOutput implements ReceiptOutputStrategy {
     
     
     public String buildReceipt(TransactionReceipt transactionReceipt) {
-        System.out.println("Customer Name:" + transactionReceipt.getCustomer().getFullName() + '\n' +
-                "Product" + '\t' + '\t' + "Description" + '\t' + "Unit Cost" + '\t' + "Quantity" + '\t' + "Discount" + '\t'
+        System.out.println("Customer Name:" + transactionReceipt.getCustomer().getFullName() + '\n' 
+                + "Date: " + transactionReceipt.getDateTime() + '\n'
+                + "Product" + '\t' + '\t' + "Description" + '\t' + "Unit Cost" + '\t' + "Quantity" + '\t' + "Discount" + '\t'
                 + "Sub Total" + '\n' + 
                "*****************************************************************************************" + '\n'
                 );
@@ -55,7 +56,7 @@ public class ConsoleReceiptOutput implements ReceiptOutputStrategy {
                          + "---------------------------------------------------------------------------------------------"
                          +'\n'
                          + "                                                                                  " + (currencyFormatter.format(transactionReceipt.getTransactionTotal())
-                         + '\n' + "Thanks for shopping at Kohls");
+                         + '\n' + "Thanks for shopping at Kohls\n\n");
     }
 }
     
