@@ -9,6 +9,7 @@ package kohlsdiscountstrategy;
  * @author J-Tron
  */
 public class ProductAndCustomerDatabase {
+            
     public static final Product[] PRODUCTS = new Product[10];
     public static final Customer[] CUSTOMERS = new Customer[10];
     
