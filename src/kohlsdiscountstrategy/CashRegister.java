@@ -17,7 +17,7 @@ public class CashRegister {
     public CashRegister(){ 
         output = ReceiptOutputFactory
             .getInstance()
-            .getReceiptOutput(ReceiptOutputFactory.Outputs.CONSOLE);
+            .getReceiptOutput(ReceiptOutputFactory.Outputs.GUI);
     }
     
     public void startNewSale(String customerNumber){
