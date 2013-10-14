@@ -14,10 +14,8 @@ public class CashRegister {
     private TransactionReceipt transactionReceipt;
     
     
-    public CashRegister(){ 
-        output = ReceiptOutputFactory
-            .getInstance()
-            .getReceiptOutput(ReceiptOutputFactory.Outputs.GUI);
+    public CashRegister(ReceiptOutputStrategy output){ 
+        this.output = output;
     }
     
     public void startNewSale(String customerNumber)throws IllegalArgumentException{
