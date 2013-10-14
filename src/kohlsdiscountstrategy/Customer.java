@@ -8,7 +8,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String customerNumber;
-    private final String nullErrorMessage = "This field may not be blank";
+    private final String NULL_ERROR_MESSAGE = "This field may not be blank";
 
     public Customer(String firstName, String lastName, String customerNumber) {
         this.firstName = firstName;
@@ -19,28 +19,31 @@ public class Customer {
     public Customer() {
     }
 
-    public void setCustomerNumer(String customerNumber) {
-        this.customerNumber = customerNumber;
+    public void setCustomerNumer(String customerNumber) throws IllegalArgumentException {
+        
         if(customerNumber.length() < 1 || customerNumber == null)
         {
-            System.out.println(nullErrorMessage);
+            throw new IllegalArgumentException(NULL_ERROR_MESSAGE);
         }
+        this.customerNumber = customerNumber;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String firstName) throws IllegalArgumentException {
+        
         if(firstName.length() < 1 || firstName == null)
         {
-            System.out.println(nullErrorMessage);
+            throw new IllegalArgumentException(NULL_ERROR_MESSAGE);
         }
+        this.firstName = firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lastName) throws IllegalArgumentException {
+        
         if(lastName.length() < 1 || lastName == null)
         {
-            System.out.println(nullErrorMessage);
+            throw new IllegalArgumentException(NULL_ERROR_MESSAGE);
         }
+        this.lastName = lastName;
     }
 
     public String getCustomerNumber() {
