@@ -18,6 +18,7 @@ public class TransactionReceipt {
     private double transactionTotal;
     private final double ZERO_PRICE = 0.0;
     private String vendor; 
+    private String dateFormat = "M/d/yyyy hh:mm a";
     
     
 
@@ -80,11 +81,11 @@ public class TransactionReceipt {
     public LineItem[] getPurchasedItems() {
         return purchasedItems;
     }
-    public String getDateTime(){
+    
+    public String getFormattedDateTimeString(String dateFormat){
     Calendar c = Calendar.getInstance();
     Date date = c.getTime();
-    String format = "MM/dd/yyyy hh:mm a";
-    SimpleDateFormat sdf = new SimpleDateFormat(format);
+    SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
     String formattedDate = sdf.format(date);
     
     return formattedDate;

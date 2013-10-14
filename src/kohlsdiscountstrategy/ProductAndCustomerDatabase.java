@@ -14,16 +14,16 @@ public class ProductAndCustomerDatabase {
     public static final Customer[] CUSTOMERS = new Customer[10];
     
     static{
-        PRODUCTS[0] = new Product("1", "400 Thread Count Queen Sheets", 49.99, new NoDiscount());
-        PRODUCTS[1] = new Product("2", "Pumpkin Candle", 12.99, new ThirtyPercentOffDiscount());
-        PRODUCTS[2] = new Product("3", "Boys sz 13 Spiderman Shirt", 10.49, new HalfOffDiscount());
-        PRODUCTS[3] = new Product("4", "Men's sz 12 Loafers", 79.99, new NoDiscount());
-        PRODUCTS[4] = new Product("5", "Rachel Ray 12 inch frying pan", 89.99, new ThirtyPercentOffDiscount());
-        PRODUCTS[5] = new Product("6", "Juniors sz 3 hip flare pant", 29.99, new HalfOffDiscount());
-        PRODUCTS[6] = new Product("7", "Apt 9 fashion tie", 23.99, new NoDiscount());
-        PRODUCTS[7] = new Product("8", "Men's Hanes white A-shirt 3 count", 14.99, new HalfOffDiscount());
-        PRODUCTS[8] = new Product("9", "Fashion Plus Silverware set", 99.99, new ThirtyPercentOffDiscount());
-        PRODUCTS[9] = new Product("10", "Girl's 10 pack socks", 13.99, new HalfOffDiscount());
+        PRODUCTS[0] = new Product("1", "400 Thread Count Queen Sheets    ", 49.99, new NoDiscount());
+        PRODUCTS[1] = new Product("2", "Lg. Pumpkin Candle               ", 12.99, new ThirtyPercentOffDiscount());
+        PRODUCTS[2] = new Product("3", "Boys sz 13 Spiderman Shirt       ", 10.49, new HalfOffDiscount());
+        PRODUCTS[3] = new Product("4", "Men's sz 12 Loafers              ", 79.99, new NoDiscount());
+        PRODUCTS[4] = new Product("5", "Rachel Ray 12in pan              ", 89.99, new ThirtyPercentOffDiscount());
+        PRODUCTS[5] = new Product("6", "Juniors sz 3 hip flare pant      ", 29.99, new HalfOffDiscount());
+        PRODUCTS[6] = new Product("7", "Apt 9 fashion tie                    ", 23.99, new NoDiscount());
+        PRODUCTS[7] = new Product("8", "Men's Hanes A-shirt              ", 14.99, new HalfOffDiscount());
+        PRODUCTS[8] = new Product("9", "Fashion Plus Silverware set      ", 99.99, new ThirtyPercentOffDiscount());
+        PRODUCTS[9] = new Product("10", "Girl's 10pk socks               ", 13.99, new HalfOffDiscount());
         
         CUSTOMERS[0] = new Customer("Jill", "Rock", "A1");
         CUSTOMERS[1] = new Customer("Dave", "Klinke", "A2");

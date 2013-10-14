@@ -14,6 +14,7 @@ import java.text.NumberFormat;
 public class ConsoleReceiptOutput implements ReceiptOutputStrategy {
     private TransactionReceipt transactionReceipt;
     private String contentOutput = "";
+    private String dateFormat = "M/d/yyyy hh:mm a";
     
     NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
     
@@ -27,7 +28,7 @@ public class ConsoleReceiptOutput implements ReceiptOutputStrategy {
     
     public String buildReceipt(TransactionReceipt transactionReceipt) {
         System.out.println("Customer Name:" + transactionReceipt.getCustomer().getFullName() + '\n' 
-                + "Date: " + transactionReceipt.getDateTime() + '\n'
+                + "Date: " + transactionReceipt.getFormattedDateTimeString(dateFormat) + '\n'
                 + "Product" + '\t' + '\t' + "Description" + '\t' + "Unit Cost" + '\t' + "Quantity" + '\t' + "Discount" + '\t'
                 + "Sub Total" + '\n' + 
                "*****************************************************************************************" + '\n'
